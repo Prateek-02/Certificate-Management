@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS Middleware (Adjust as per your frontend URL)
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://bespoke-gingersnap-c0b6d2.netlify.app'],
+    origin: ['http://localhost:3000', 'https://certificate-verfication-00.netlify.app/'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Ensure all methods are allowed
     allowedHeaders: ['Content-Type', 'Authorization'], // Add any other headers your API needs
 }));
