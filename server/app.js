@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS Middleware (Adjust as per your frontend URL)
 app.use(cors({
-    origin: 'http://localhost:3000', // Use your frontend's URL in production
+    origin: ['http://localhost:3000', 'https://bespoke-gingersnap-c0b6d2.netlify.app'], // Use your frontend's URL in production
 }));
 
 // Body Parsing Middleware
@@ -21,10 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log('MongoDB connected successfully!'))
 .catch(err => console.error('MongoDB connection error:', err));
 
