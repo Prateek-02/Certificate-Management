@@ -58,6 +58,7 @@ const ErrorMessage = styled.p`
     color: #ff6b6b;
     text-align: center;
     margin-top: 10px;
+    font-size: 20px;
 `;
 
 const CertificateImage = styled.img`
