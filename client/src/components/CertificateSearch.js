@@ -55,10 +55,10 @@ const Button = styled.button`
 `;
 
 const ErrorMessage = styled.p`
-    color: #ff6b6b;
+    color: black;
     text-align: center;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 30px;
 `;
 
 const CertificateImage = styled.img`
