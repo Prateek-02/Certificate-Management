@@ -9,7 +9,7 @@ const StyledMain = styled.main`
     color: white;
     padding: 40px;
     min-height: calc(100vh - 200px);
-    margin: 40px 20px; // Added left and right margin
+    margin: 40px 20px; 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
@@ -35,6 +35,8 @@ const GlassContainer = styled.div`
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
 `;
+
+
 
 const StyledCertificateSearch = styled(CertificateSearch)`
     .input {

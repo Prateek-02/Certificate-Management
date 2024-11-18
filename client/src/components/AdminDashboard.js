@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaUpload, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 import certificateService from '../services/certificateService';
+import certificateImage4 from '../assets/certificateImage4.png';
 
 const DashboardContainer = styled.div`
   max-width: 800px;
@@ -93,6 +94,14 @@ const PageBackground = styled.div`
   margin-bottom: 2rem;
 `;
 
+const CertificateImage = styled.img`
+  width: 40%;
+  height: 10%;
+  margin: 20px auto;
+  display: flex;
+  border-radius: 10px;
+`;
+
 const AdminDashboard = () => {
     const [file, setFile] = useState(null);
     const [uploadSuccess, setUploadSuccess] = useState(false);
@@ -134,6 +143,7 @@ const AdminDashboard = () => {
         <PageBackground>
             <DashboardContainer>
                 <Title>Admin Dashboard</Title>
+                <CertificateImage src={certificateImage4} alt="Certificate Example" />
                 <FileInput type="file" id="file" onChange={handleFileChange} />
                 <FileInputLabel htmlFor="file">
                     <FaUpload /> {file ? file.name : 'Choose a file'}

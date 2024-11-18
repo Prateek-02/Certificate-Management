@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import certificateService from '../services/certificateService';
 import CertificateDisplay from './CertificateDisplay';
+import certificateImage3 from '../assets/certificateImage3.png';
 
 const SearchContainer = styled.div`
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -20,13 +21,14 @@ const Title = styled.h2`
 `;
 
 const Input = styled.input`
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    font-size: 20px;
+    padding: 20px;
     margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    color: black;
 
     &::placeholder {
         color: rgba(255, 255, 255, 0.7);
@@ -34,8 +36,9 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-    width: 100%;
-    padding: 10px;
+    width: 80%;
+    padding: 20px;
+    font-size: 20px;
     border: none;
     border-radius: 5px;
     background: #B24592;  // Changed to a mix of purple and pink
@@ -44,7 +47,10 @@ const Button = styled.button`
     transition: background 0.3s ease;
 
     &:hover {
-        background: #9D366E;  // Darker shade for hover effect
+        background: #9D366E;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
     }
 `;
 
@@ -52,6 +58,13 @@ const ErrorMessage = styled.p`
     color: #ff6b6b;
     text-align: center;
     margin-top: 10px;
+`;
+
+const CertificateImage = styled.img`
+    width: 95%;
+    height: 500px;
+    margin: 20px 0;
+    border-radius: 10px;
 `;
 
 const CertificateSearch = () => {
@@ -81,6 +94,7 @@ const CertificateSearch = () => {
     return (
         <SearchContainer>
             <Title>Search for your Certificate</Title>
+            <CertificateImage src={certificateImage3} alt="Certificate Sample" />
             <Input 
                 type="text" 
                 placeholder="Enter Certificate ID" 

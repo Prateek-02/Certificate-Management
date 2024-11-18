@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
-import certificateImage from '../assets/certificateImage.png'; // Assuming this is the path to the certificate image
+import certificateImage from '../assets/certificateImage.png';
+import certificateImage2 from '../assets/certificateImage2.png';
 
 const StyledMain = styled.main`
     background: linear-gradient(to right, #8A2BE2, #9400D3);
@@ -48,7 +49,7 @@ const GetStartedTitle = styled.h3`
 `;
 
 const StyledButton = styled(Link)`
-    display: inline-block;
+    display: block;
     padding: 12px 24px;
     margin: 0 auto;
     background-color: white;
@@ -73,6 +74,13 @@ const CertificateImage = styled.img`
     border-radius: 10px;
 `;
 
+const ImageContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+`;
+
 const HomePage = () => {
     return (
         <div>
@@ -85,9 +93,12 @@ const HomePage = () => {
                 <Description>
                     Admins can use the Admin Dashboard to upload certificates in bulk via Excel files, while students can search for their certificates using a unique ID.
                 </Description>
-                <CertificateImage src={certificateImage} alt="Certificate Image" />
                 <GetStartedSection>
                     <GetStartedTitle>Get Started</GetStartedTitle>
+                    <ImageContainer>
+                        <CertificateImage src={certificateImage2} alt="Certificate Image 2" />
+                        <CertificateImage src={certificateImage} alt="Certificate Image" />
+                    </ImageContainer>
                     <StyledButton to="/register">Register</StyledButton>
                 </GetStartedSection>
             </StyledMain>
