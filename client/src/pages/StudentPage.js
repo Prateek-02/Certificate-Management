@@ -79,6 +79,7 @@ const StyledCertificateSearch = styled(CertificateSearch)`
     }
 `;
 
+
 const StudentPage = () => {
     return (
         <div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
+import certificateImage from '../assets/certificateImage.png'; // Assuming this is the path to the certificate image
 
 const StyledMain = styled.main`
     background: linear-gradient(to right, #8A2BE2, #9400D3);
@@ -65,6 +66,13 @@ const StyledButton = styled(Link)`
     }
 `;
 
+const CertificateImage = styled.img`
+    width: 50%;
+    height: 40%;
+    margin: 20px 0;
+    border-radius: 10px;
+`;
+
 const HomePage = () => {
     return (
         <div>
@@ -77,6 +85,7 @@ const HomePage = () => {
                 <Description>
                     Admins can use the Admin Dashboard to upload certificates in bulk via Excel files, while students can search for their certificates using a unique ID.
                 </Description>
+                <CertificateImage src={certificateImage} alt="Certificate Image" />
                 <GetStartedSection>
                     <GetStartedTitle>Get Started</GetStartedTitle>
                     <StyledButton to="/register">Register</StyledButton>
