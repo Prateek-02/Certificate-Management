@@ -48,31 +48,32 @@ const CertificateDisplay = ({ certificate }) => {
     }
 
     const handleDownload = async () => {
-        setIsDownloading(true);
-        setDownloadError(null);
-        try {
-            const response = await axios.get(
-                `http://localhost:5000/api/certificates/download/${certificate.certificateId}`,
-                { 
-                    responseType: 'blob', // Expecting a PDF blob
-                }
-            );
-            
-            const blob = new Blob([response.data], { type: 'application/pdf' });
-            const url = window.URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.setAttribute('download', `certificate_${certificate.certificateId}.pdf`);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link); // Clean up the link after download
-        } catch (error) {
-            console.error('Error downloading certificate:', error);
-            setDownloadError(`Failed to download certificate: ${error.message}`);
-        } finally {
-            setIsDownloading(false);
-        }
-    };
+    setIsDownloading(true);
+    setDownloadError(null);
+
+    try {
+        const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+        const response = await axios.get(
+            `${API_BASE_URL}/certificates/download/${certificate.certificateId}`,
+            { responseType: 'blob' }
+        );
+
+        const blob = new Blob([response.data], { type: 'application/pdf' });
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', `certificate_${certificate.certificateId}.pdf`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link); // Clean up
+    } catch (error) {
+        console.error('Axios Error:', error.toJSON());
+        setDownloadError(`Failed to download certificate. Please try again.`);
+    } finally {
+        setIsDownloading(false);
+    }
+};
+
 
     return (
         <DisplayContainer>
