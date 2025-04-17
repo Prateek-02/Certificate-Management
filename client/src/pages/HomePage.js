@@ -86,7 +86,7 @@ const HomePage = () => {
         <div>
             <Header />
             <StyledMain>
-                <Title>Welcome to the Certificate Verification System</Title>
+                <Title>Welcome to the Certificate Management System</Title>
                 <Description>
                     This system allows educational institutions to upload student certificates and lets students search and download their certificates.
                 </Description>

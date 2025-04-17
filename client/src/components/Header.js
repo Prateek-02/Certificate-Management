@@ -70,7 +70,7 @@ const Nav = styled.nav`
 const Header = () => {
     return (
         <StyledHeader>
-            <Title>Certificate Verification System</Title>
+            <Title>Certificate Management System</Title>
             <Nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
