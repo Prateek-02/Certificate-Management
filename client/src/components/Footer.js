@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
 const Footer = () => {
     return (
         <StyledFooter>
-            <p>Prateek © 2024 Certificate Verification System. All rights reserved.</p>
+            <p>Prateek © 2024 Certificate Management System. All rights reserved.</p>
         </StyledFooter>
     );
 };
